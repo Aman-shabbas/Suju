@@ -1,6 +1,6 @@
-<<<<<<< Updated upstream
+# Vite
 .vite/
-=======
+
 # Python
 __pycache__/
 *.py[cod]
@@ -162,4 +162,3 @@ Thumbs.db
 # Local configuration
 config.local.js
 config.local.json
->>>>>>> Stashed changes
