@@ -1,11 +1,22 @@
-import React from "react";
-import ChatBox from "./components/ChatBox";
+import { useState } from "react";
+import "./App.css";
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      <h1>Suju Chat</h1>
-      <ChatBox />
-    </div>
+    <>
+      <div id="main-box">
+        <div id="message-area">
+          <h1>Chat App</h1>
+        </div>
+        <div className="textarea">
+          <input type="text" placeholder="Message..." id="input" />
+          <button type="submit" id="submit-button">
+            Submit
+          </button>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default App;
