@@ -19,15 +19,6 @@ body {
   justify-content: center;
 }
 
-#message-area {
-  height: 80%;
-  width: 100%;
-  background-color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #input {
   width: 90%;
 }
@@ -40,6 +31,41 @@ body {
   border-radius: 10px;
 }
 
-h1{
+h1 {
   color: black;
 }
+
+#message-area {
+  align-self: flex-end;
+  height: 80%;
+  width: 100%;
+  background-color: aliceblue;
+  color: black;
+  display: flex;
+  justify-content: right;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.query-box {
+  align-self: flex-end; /* Push query to the right */
+  max-width: 60%;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.response-box {
+  align-self: flex-start; /* Push response to the left */
+  max-width: 60%;
+  background-color: lightgreen;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
