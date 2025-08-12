@@ -1,5 +1,6 @@
 import { useState, React } from "react";
 import "./App.css";
+import ChatBox from "./components/ChatBox";
 
 const App = () => {
   const [messages, setMessages] = useState([]);
@@ -9,34 +10,8 @@ const App = () => {
     <>
       <div id="main-box">
         <div id="message-area">
-          {/* <div className="message">
-            {messages.map((msg, ind) => (
-              <>
-                <div key={ind} className="query-box">
-                  <p key={ind} className="query">
-                    {msg.query}
-                  </p>
-                </div>
-                <div key={ind} className="response-box">
-                  <p key={ind} className="resp">
-                    {msg.response}
-                  </p>
-                </div>
-              </>
-            ))}
-          </div> */}
-
           <div className="message">
-            {messages.map((msg, ind) => (
-              <div key={ind}>
-                <div className="query-box">
-                  <p className="query">{msg.query}</p>
-                </div>
-                <div className="response-box">
-                  <p className="resp">{msg.response}</p>
-                </div>
-              </div>
-            ))}
+            <ChatBox messages={messages} />
           </div>
         </div>
         <div className="textarea">
@@ -54,7 +29,7 @@ const App = () => {
               if (value.trim() === "") return;
               setMessages([
                 ...messages,
-                { query: value, response: "This is a mock response" },
+                { user: value, bot: "This is a mock response" },
               ]);
               setValue("");
             }}
