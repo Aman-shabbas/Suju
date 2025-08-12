@@ -1,10 +1,17 @@
 import { useState, React } from "react";
+import axios from "axios";
 import "./App.css";
 import ChatBox from "./components/ChatBox";
 
 const App = () => {
   const [messages, setMessages] = useState([]);
-  const [value, setValue] = useState("");
+  const [input, setInput] = useState("");
+
+  const sendMessage = async () => {
+    const res = await axios.post("http://localhost:8000/chat", { message: input });
+    setMessages([...messages, { user: input, bot: res.data.response }]);
+    setInput("");
+  };
 
   return (
     <>
@@ -19,20 +26,13 @@ const App = () => {
             type="text"
             placeholder="Message..."
             id="input"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
           />
           <button
             type="submit"
             id="submit-button"
-            onClick={() => {
-              if (value.trim() === "") return;
-              setMessages([
-                ...messages,
-                { user: value, bot: "This is a mock response" },
-              ]);
-              setValue("");
-            }}
+            onClick={sendMessage}
           >
             Submit
           </button>
