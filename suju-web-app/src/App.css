@@ -31,10 +31,6 @@ body {
   border-radius: 10px;
 }
 
-h1 {
-  color: black;
-}
-
 #message-area {
   align-self: flex-end;
   height: 80%;
