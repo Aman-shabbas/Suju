@@ -53,18 +53,19 @@ body {
 .query-box {
   align-self: flex-end; /* Push query to the right */
   background-color: rgb(223, 229, 229);
+  border-radius: 10px 0px 10px 10px;
 }
 
 .response-box {
   align-self: flex-start; /* Push response to the left */
   background-color: rgb(155, 157, 155);
+  border-radius: 0px 10px 10px 10px;
 }
 
 .box {
   height: fit-content;
   width: fit-content;
   max-width: 80%;
-  border-radius: 10px;
   padding: 5px;
   border: 1px solid black;
 }
