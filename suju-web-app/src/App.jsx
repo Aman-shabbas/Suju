@@ -7,9 +7,13 @@ const App = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
+  const response =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia assumenda natus maiores? Reiciendis alias cupiditate cumque nostrum fugit veritatis quod. Quibusdam quasi magnam culpa, voluptatibus similique nesciunt repudiandae! Libero!";
+
   const sendMessage = async () => {
-    const res = await axios.post("http://localhost:8000/chat", { message: input });
-    setMessages([...messages, { user: input, bot: res.data.response }]);
+    // const res = await axios.post("http://localhost:8000/chat", { message: input });
+    // setMessages([...messages, { user: input, bot: res.data.response }]);
+    setMessages([...messages, { user: input, bot: response }]);
     setInput("");
   };
 
@@ -29,11 +33,7 @@ const App = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button
-            type="submit"
-            id="submit-button"
-            onClick={sendMessage}
-          >
+          <button type="submit" id="submit-button" onClick={sendMessage}>
             Submit
           </button>
         </div>
