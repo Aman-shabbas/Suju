@@ -1,7 +1,7 @@
 import "../App.css";
 import sendIcon from "/assets/send-icon.png"; 
 
-export default function ActionInput({ input, setInput, sendMessage }) {
+export default function ActionInput({ input, setInput, sendMessage, keyHandler }) {
   return (
     <div className="textarea">
       <div id="input-box">
@@ -10,6 +10,7 @@ export default function ActionInput({ input, setInput, sendMessage }) {
           placeholder="Message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={e => keyHandler(e.key)}
         />
           <img
             src={sendIcon}

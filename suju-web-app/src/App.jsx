@@ -15,11 +15,22 @@ const App = () => {
 
   const sendMessage = async () => {
     if (!input.trim()) return; 
-    const res = await axios.post("http://localhost:8000/chat", { message: input });
+    const res = await axios.post(`http://localhost:8000/chat`, {
+      message: input,
+    });
+
     setMessages([...messages, { user: input, bot: res.data.response }]);
     // setMessages([...messages, { user: input, bot: response }]);
     setInput("");
   };
+
+  const enterKeyHandler = (key) => {
+    if (key === "Enter") {      
+      sendMessage();
+      setInput("")
+      return;
+    }
+  }
 
 useEffect(() => { 
     if (containerRef.current) {
@@ -39,6 +50,7 @@ useEffect(() => {
           sendMessage={sendMessage}
           input={input}
           setInput={setInput}
+          keyHandler={enterKeyHandler}
         />
       </div>
     </>
