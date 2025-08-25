@@ -26,7 +26,9 @@ Suju/
 │   ├── jest.config.js       # Jest testing configuration
 │   └── Dockerfile          # Docker configuration
 ├── .gitignore               # Centralized gitignore for both projects
-└── docker-compose.yml       # Docker orchestration
+├── docker-compose.yml       # Docker orchestration
+└── docs                     # Documentation 
+    └── vite.md              # vite documentation
 ```
 
 ## Prerequisites
