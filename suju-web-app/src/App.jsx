@@ -10,9 +10,6 @@ const App = () => {
   const [input, setInput] = useState("");
   const containerRef = useRef(null);
 
-  const response =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia assumenda natus maiores? Reiciendis alias cupiditate cumque nostrum fugit veritatis quod. Quibusdam quasi magnam culpa, voluptatibus similique nesciunt repudiandae! Libero!";
-
   const sendMessage = async () => {
     if (!input.trim()) return; 
     const res = await axios.post(`http://localhost:8000/chat`, {
@@ -20,7 +17,6 @@ const App = () => {
     });
 
     setMessages([...messages, { user: input, bot: res.data.response }]);
-    // setMessages([...messages, { user: input, bot: response }]);
     setInput("");
   };
 
