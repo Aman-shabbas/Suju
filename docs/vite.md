@@ -88,8 +88,8 @@ In this project, Vite is used for:
 
 This project was created using Vite’s scaffolding tool:
 ```
-npm create vite@latest my-app
-cd my-app
+npm create vite@latest suju-web-app
+cd suju-web-app
 npm install
 ```
 
