@@ -12,14 +12,14 @@ assignees: ''
 
 ## User story
 
-As a ***[role]***
+- [ ] As a ***[role]***
 I want ***[requirement]***
 So that ***[reason]***
 ---
 
 ## Acceptance criteria
 
-Give that ***[initial state]***
+- [ ] Give that ***[initial state]***
 When ***[action]***
 Then ***[result]***
 ---
