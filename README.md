@@ -20,15 +20,17 @@ Suju/
 │   ├── src/                 # Source code
 │   │   ├── components/      # React components
 │   │   └── index.jsx        # Application entry point
+│   ├── tests/               # Test files (Jest)
+│   │   ├── components/      # Component tests
+│   │   ├── __mocks__/       # Mock files
+│   │   └── setupTests.js    # Global test setup
 │   ├── index.html           # HTML entry point for Vite
 │   ├── vite.config.js       # Vite configuration
 │   ├── package.json         # Node.js dependencies
 │   ├── jest.config.js       # Jest testing configuration
 │   └── Dockerfile          # Docker configuration
 ├── .gitignore               # Centralized gitignore for both projects
-├── docker-compose.yml       # Docker orchestration
-└── docs                     # Documentation 
-    └── vite.md              # vite documentation
+└── docker-compose.yml       # Docker orchestration
 ```
 
 ## Prerequisites
@@ -166,6 +168,11 @@ npm run test:watch
 npm run test:coverage
 ```
 
+**Note**: Frontend tests are located in the `tests/` folder (outside `src/`) and include:
+- Component tests for React components
+- Integration tests with mocked API calls
+- Global test setup and mocks
+
 ## Development
 
 ### Backend Development
@@ -179,6 +186,7 @@ npm run test:coverage
 - Add new components in the components directory
 - Update routing in `suju-web-app/src/App.jsx`
 - Vite configuration is in `suju-web-app/vite.config.js`
+- Tests are in `suju-web-app/tests/` (separate from source code)
 
 ## Data
 
@@ -225,6 +233,10 @@ The application uses a simple JSON file for data storage:
    - Backend: `pip install -r requirements.txt`
    - Frontend: `npm install` or `npm cache clean --force && npm install`
 
+5. **Test failures**:
+   - Frontend tests: Ensure all test dependencies are installed
+   - Backend tests: Check pytest configuration and virtual environment
+
 ### Port Conflicts
 If you encounter port conflicts with other projects:
 ```bash
@@ -256,6 +268,7 @@ pkill -f "vite"
 - `vite.config.js`: Vite configuration for development server and build
 - `index.html`: HTML entry point for the React application
 - `jest.config.js`: Jest configuration for testing React components
+- `tests/`: Test directory containing all Jest tests, mocks, and setup
 
 ## Contributing
 
