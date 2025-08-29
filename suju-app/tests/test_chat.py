@@ -103,9 +103,6 @@ class TestChatRouter:
             with patch('json.load', return_value=mock_data):
                 response = client.post("/chat", json={"message": "Hello! How are you?"})
                 assert response.status_code == 200
-                # The message contains "Hello" which should match "hello" in predefined responses
-                # But since it's "Hello!" with exclamation, it might not match exactly
-                # Let's test with a simpler case that definitely works
                 response2 = client.post("/chat", json={"message": "hello there!"})
                 assert response2.status_code == 200
                 assert response2.json() == {"response": "Hi there! How can I help you?"}
