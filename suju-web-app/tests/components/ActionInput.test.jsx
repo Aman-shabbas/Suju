@@ -6,7 +6,8 @@ describe('ActionInput', () => {
   test('renders input with placeholder and calls setInput on change', () => {
     const setInput = jest.fn();
     render(<ActionInput input="" setInput={setInput} sendMessage={jest.fn()} keyHandler={jest.fn()} />);
-    const input = screen.getByPlaceholderText(/message/i);
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('placeholder', 'Message...');
     fireEvent.change(input, { target: { value: 'Hello' } });
     expect(setInput).toHaveBeenCalledWith('Hello');
   });
@@ -14,7 +15,7 @@ describe('ActionInput', () => {
   test('calls keyHandler on Enter key', () => {
     const keyHandler = jest.fn();
     render(<ActionInput input="" setInput={jest.fn()} sendMessage={jest.fn()} keyHandler={keyHandler} />);
-    const input = screen.getByPlaceholderText(/message/i);
+    const input = screen.getByRole('textbox');
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
     expect(keyHandler).toHaveBeenCalledWith('Enter');
   });
@@ -22,7 +23,7 @@ describe('ActionInput', () => {
   test('clicking send image triggers sendMessage', () => {
     const sendMessage = jest.fn();
     render(<ActionInput input="Hello" setInput={jest.fn()} sendMessage={sendMessage} keyHandler={jest.fn()} />);
-    const sendImg = screen.getByRole('img', { name: /send/i });
+    const sendImg = screen.getByRole('img', { name: "send" });
     fireEvent.click(sendImg);
     expect(sendMessage).toHaveBeenCalled();
   });
