@@ -1,0 +1,21 @@
+
+name: Sync docs to wiki
+
+on:
+  push:
+    branches:
+      - spiking_on_workflows
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync to Wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
+        with:
+          path: "docs"
