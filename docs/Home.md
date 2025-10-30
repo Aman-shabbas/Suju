@@ -29,7 +29,7 @@ This wiki is organized into multiple sections:
 
 ---
 
-## 🚀 Next Steps  
+## 🚀 Next Step
 
 - [ ] Expand chatbot features  
 - [ ] Document training pipeline for LLM  
