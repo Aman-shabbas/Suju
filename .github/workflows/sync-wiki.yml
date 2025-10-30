@@ -3,9 +3,8 @@ name: Sync docs to wiki
 
 on:
   push:
-
     paths:
-      - "docs"
+      - "docs/**"
     branches:
       - spiking_on_workflows
 
